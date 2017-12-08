@@ -1,0 +1,36 @@
+$web-width: 567px;
+$base-font: "Liberation Sans";
+$base-color: #ddb54f;
+
+.movies-container {
+  margin: 0 auto;
+  max-width: $web-width;
+}
+
+.current-movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.movie-header {
+  margin: 0 auto;
+}
+
+.movie-logo {
+  width: 50%;
+}
+
+.movie-list-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-text {
+  width: 100%;
+}

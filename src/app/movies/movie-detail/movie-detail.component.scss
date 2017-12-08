@@ -1,0 +1,51 @@
+$web-width: 567px;
+$base-font: "Liberation Sans";
+$base-color: #ddb54f;
+
+.movie-container {
+  margin: 0 auto;
+  max-width: $web-width;
+  font-family: $base-font;
+}
+
+.main-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  @media (max-width: $web-width) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.movie-logo {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+
+  .mat-card-title {
+    margin-bottom: 2px;
+    font-size: 23px;
+
+    @media (max-width: $web-width) {
+      font-size: 17px;
+    }
+  }
+
+  @media (max-width: $web-width) {
+    font-size: 17px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.movie-plot {
+  font-size: 17px;
+}

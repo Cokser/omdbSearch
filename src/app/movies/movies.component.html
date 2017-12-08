@@ -1,0 +1,27 @@
+<mat-card class="movies-container">
+  <mat-form-field class="search-input">
+    <input [(ngModel)]="searchValue" (keyup)="searchMovies()" matInput type="text" [matAutocomplete]="auto" placeholder="Enter Search Movie"/>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option (click)="changeCurrentMovie(movie)" *ngFor="let movie of movies" [value]="movie['Title']">
+        <p>
+          {{ movie['Title'] }}
+        </p>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <article *ngIf="currentMovie" class="current-movie">
+    <mat-card-header class="movie-header">
+      <mat-card-title>{{currentMovie.Title}}</mat-card-title>
+      <mat-card-subtitle>{{currentMovie.Year}}</mat-card-subtitle>
+    </mat-card-header>
+    <img class="movie-logo" [src]="currentMovie.Poster" alt="{{currentMovie.Title}} logo">
+    <button mat-raised-button (click)="addToList(currentMovie)">Add</button>
+  </article>
+  <mat-list class="movie-list" *ngIf="movieList.length" role="movies">
+    <h3 mat-subheader>Movie List</h3>
+    <mat-list-item (click)="onSelectMovie(movie)" class="movie-list-item" *ngFor="let movie of movieList" role="listitem">
+      <p class="item-text">{{movie.Title}} ({{movie.Year}})</p>
+      <button mat-raised-button color="warn" (click)="removeFromList(movie)">Remove</button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
