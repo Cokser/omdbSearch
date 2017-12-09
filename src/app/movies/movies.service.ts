@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 const APIKEY = '2984ae23';
-const OMDB = 'http://www.omdbapi.com/?apikey=';
+const OMDB = 'https://www.omdbapi.com/?apikey=';
 
 @Injectable()
 export class MoviesService {
